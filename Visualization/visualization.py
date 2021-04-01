@@ -5,26 +5,6 @@ import imageio
 import os
 
 
-#%%
-#Only once, charge data from urls
-#url = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H19070220_archive.json'
-#download(url, path='./MMM_EcoCompt_X2H19070220_archive.json')
-#url2 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20042632_archive.json'
-#download(url2, path='./MMM_EcoCompt_X2H20042632_archive.json')
-#url3 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20042633_archive.json'
-#download(url3, path='./MMM_EcoCompt_X2H20042633_archive.json')
-#url4 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20042635_archive.json'
-#download(url4, path='./MMM_EcoCompt_X2H20042635_archive.json')
-#url5 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20063161_archive.json'
-#download(url5, path='./MMM_EcoCompt_X2H20063161_archive.json')
-#url6 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20063162_archive.json'
-#download(url6, path='./MMM_EcoCompt_X2H20063162_archive.json')
-#url7 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_XTH19101158_archive.json'
-#download(url7, path='./MMM_EcoCompt_XTH19101158_archive.json')
-#url8 = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_EcoCompt_X2H20063163_archive.json'
-#download(url8, path='./MMM_EcoCompt_X2H20063163_archive.json')
-
-
 # %%
 #Creation of a dictionary containing the 8 json-files we need, one by Eco meter
 dict_ = {} #we start with an empty dictionary which will be filled with json_files
@@ -39,10 +19,10 @@ dict_[7] = pd.read_json('C:/Users/quenf/Bike_challenge2/Visualization/JSON_Files
 
 
 # %%
-dict_coord = {} #empty dictionary in which we will put coordinates of each Eco meter
+dict_coord = {} #empty dictionary in which we will put coordinates of each eco-meter
 
 #We fill dict_coord up
-# and we only keep variables we're interested in for the visualization
+#and we only keep variables we're interested in for the visualization
 
 for i in range(8):
     dict_coord[i] = dict_[i]['location'][0]

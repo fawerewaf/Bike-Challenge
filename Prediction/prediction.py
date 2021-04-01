@@ -1,19 +1,12 @@
 #%%
 import pandas as pd 
 pd.options.display.max_rows = 30
-from download import download
 import numpy as np 
 import datetime  
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import linear_model
 import statsmodels.api as sm
-
-
-#%%
-url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVtdpXMHB4g9h75a0jw8CsrqSuQmP5eMIB2adpKR5hkRggwMwzFy5kB-AIThodhVHNLxlZYm8fuoWj/pub?gid=2105854808&single=true&output=csv"
-path_target="La myriade de Totems de Montpellier - SaisiesFormulaire.csv"
-download(url, path_target, replace = True)
 
 
 # %%
@@ -231,9 +224,9 @@ results = model.fit(X, y)
 print(results.intercept_, results.coef_)
 
 
-estimated_y324= results.intercept_ + results.coef_*324 - df_weekdays['weekdays total'][323]
-estimated_y324
-#1679 estimated, it's way too much
+estimated_324 = results.intercept_ + results.coef_*324 - df_weekdays['weekdays total'][323]
+estimated_324
+#660 estimated, it's way too much compared to last weekdays values
 
 
 #%%
@@ -247,9 +240,6 @@ model2 = sm.OLS(y, X)
 results2 = model2.fit()
 
 print(results2.summary())
-
-#Values for confidence interval may be calculated with 
-#coefs given ([0.025, 0.075]) 
 
 ##Given that atypical estimation value, 
 ##we're not going to make a linear regression with df_Fridays
