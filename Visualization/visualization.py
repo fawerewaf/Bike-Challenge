@@ -84,33 +84,11 @@ for i in range(0, dict_[0].shape[0]):
 #%%
 #Creation of our gif
 
-png_dir = '../Vizualisation'
+png_dir = '../Visualization'
 images = []
 for file_name in sorted(os.listdir(png_dir)):
     if file_name.endswith('.png'):
         file_path = os.path.join(png_dir, file_name)
         images.append(imageio.imread(file_path))
-imageio.mimsave('../Vizualisation/gif/Viz.gif', images, fps = 2) 
+imageio.mimsave('../Visualization/gif/Vis.gif', images, fps = 2) 
 #fps option gives the gif framerate
-
-
-#%%
-#Barplot test
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
-import plotly.express as px
-
-#Convertir le dictionnaire en dataframe? sinon pas possible
-for i in range(8):
-    for j in range()
-    df[i]= dict_[i]
-
-fig = px.bar(
-        dict_, x = dict_[i], y ="intensity", color = dict_[i],
-        animation_frame="dateObserved", 
-        range_y=[0,4000000000])
-
-
-# %%
