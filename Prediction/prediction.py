@@ -27,14 +27,14 @@ df_bicycle.dtypes
 
 
 # %%
-#the first two rows and the last row deleted
-del df_bicycle['Note']
-del df_bicycle['Total']
+#the first two rows 
 df_bicycle.dropna(axis=0, how="all", inplace = True)
 df_bicycle
 
 #%%
-#Unnamed column deleted
+#useless columns deleted
+del df_bicycle['Note']
+del df_bicycle['Total']
 df_bicycle.dropna(axis = 1, how = 'all', inplace = True)
 df_bicycle
 
@@ -49,11 +49,12 @@ df_shrunk_bicycle
 
 
 #%%
-#Deletes redundant dates and only keep the last one
+#Deletes redundant dates and only keeps the last one
 df_shrunk_bicycle = df_shrunk_bicycle.drop_duplicates(subset = ['Date'], keep = "last")
 df_shrunk_bicycle
 
 #%%
+#reindexation
 for i in range (len(df_shrunk_bicycle)):
     df_shrunk_bicycle.rename(index = {df_shrunk_bicycle.index[i]:i}, inplace = True)
 df_shrunk_bicycle
@@ -64,7 +65,7 @@ df_shrunk_bicycle2 = df_shrunk_bicycle.copy()
 
 
 #%%
-#Keep only dates after first quarantine
+#Keeps only dates after first quarantine
 df_shrunk_bicycle2 = df_shrunk_bicycle2.iloc[11:]
 df_shrunk_bicycle2.describe()
 
@@ -85,7 +86,7 @@ df_shrunk_bicycle3
 df_weekdays = df_shrunk_bicycle3.loc[(df_shrunk_bicycle3['Jour de la semaine'] == 'Monday') ^ (df_shrunk_bicycle3['Jour de la semaine'] == 'Tuesday') ^ (df_shrunk_bicycle3['Jour de la semaine'] == 'Wednesday') ^ (df_shrunk_bicycle3['Jour de la semaine'] == 'Thursday') ^ (df_shrunk_bicycle3['Jour de la semaine']=='Friday')] 
 
 
-#Reindex of df_weekdays
+#Reindexation of df_weekdays
 for i in range (len(df_weekdays)):
     df_weekdays.rename(index = {df_weekdays.index[i]:i}, inplace = True)
 df_weekdays
@@ -97,7 +98,7 @@ df_weekdays.median()#248
 #Only keeps Fridays 
 df_Fridays = df_weekdays.loc[df_weekdays['Jour de la semaine'] == 'Friday']
 
-#Reindex of df_Fridays
+#Reindexation of df_Fridays
 for i in range (len(df_Fridays)):
     df_Fridays.rename(index = {df_Fridays.index[i]:i}, inplace = True)
 df_Fridays
