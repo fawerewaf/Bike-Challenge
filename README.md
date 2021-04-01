@@ -6,7 +6,7 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vQVtdpXMHB4g9h75a0jw8CsrqSuQmP5e
 we had to predict the number of bicycles passing between 00:01 AM and 09:00 AM on Friday, April 2nd, by Albert 1er street in Montpellier. That part contains data sorting, and prediction method.
 A pdf file is given in Prediction folder describing the method used for this prediction.
 
-My prediction of bike number between 00:01 AM and 09:00 AM on Friday, April 2nd is: 279
+My prediction of bike number between 00:01 AM and 09:00 AM on Friday, April 2nd is:   279
 
 ## Visualization
 On the other hand, using data from https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-eco-compteurs, we had to visualize the bike traffic in Montpellier. 
